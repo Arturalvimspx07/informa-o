@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNR - Procedimento de Acareação</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: left;
+        }
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #007BFF;
+        }
+        .copy-button {
+            display: block;
+            width: 100%;
+            max-width: 200px;
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .copy-button:hover {
+            background-color: #0056b3;
+        }
+        .back-button {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .back-button a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #EE4D2D;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .back-button a:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Procedimento de Acareação - PNR</h1>
+
+        <p><strong>AO RECEBER A ACAREAÇÃO:</strong> tente primeiro enviar a mensagem e não salvar o contato do cliente. É necessário que apareça o número na conversa.</p>
+
+        <p><strong>Texto para PNR:</strong></p>
+
+        <div id="message">
+            <p><strong>Olá</strong> (nome do cliente),</p>
+            <p>Eu sou da <strong>SPXOWNFLEET</strong>, entregador Shopee. Gostaria de confirmar se a entrega do pedido <strong>BRxxxxxxxxxx</strong> ocorreu como esperado. Você poderia confirmar se o pacote foi realmente recebido, por favor?</p>
+            <p>
+                Envie 1: Se já recebeu o seu pedido <br>
+                Envie 2: Se recebeu com alguma divergência e qual seria? <br>
+                Envie 3: Não recebido
+            </p>
+            <p>Obrigado pela resposta!</p>
+        </div>
+
+        <!-- Botão de Copiar -->
+        <button class="copy-button" onclick="copyText()">Copiar Texto</button>
+
+        <!-- Textarea Oculto para Cópia -->
+        <textarea id="text-to-copy" style="position: absolute; left: -9999px;"></textarea>
+
+        <p><strong>Pessoal, acho de extrema importância essa dica sobre PNR</strong></p>
+
+        <p><strong>Richard</strong>, o cliente me bloqueou no WhatsApp. O que eu faço?</p>
+
+        <p>Um print do <strong>WhatsApp</strong> mostrando que o cliente te bloqueou, encaminhe no <strong>App</strong> essa <strong>conversa</strong>. Vá até a <strong>casa</strong> do cliente, <strong>não</strong> precisa chamar o cliente, com a <strong>geolocalização</strong> ligada e tire uma foto da fachada.</p>
+
+        <p><strong>Exemplo:</strong> O cliente não tem zap, e agora?</p>
+
+        <p>Você vai tirar o print onde consta que o cliente <strong>não</strong> tem <strong>zap</strong> e também precisa ir até a casa dele com a <strong>geolocalização</strong> ligada e tirar uma <strong>foto</strong> da fachada da <strong>casa</strong>.</p>
+
+        <p><strong>Obs:</strong> PNR é tratado 100% via <strong>app</strong>. Não utilizamos mais o PAPEL <strong>acareação</strong> ❌</p>
+
+        <!-- Botão de Voltar -->
+        <div class="back-button">
+            <a href="index.html">Voltar para a Página Inicial</a>
+        </div>
+    </div>
+
+    <script>
+        function copyText() {
+            // Seleciona o elemento oculto de texto
+            let textArea = document.getElementById("text-to-copy");
+            let messageDiv = document.getElementById("message");
+
+            // Pega apenas o texto sem formatação HTML
+            textArea.value = messageDiv.innerText;
+            textArea.select();
+            textArea.setSelectionRange(0, 99999); // Para compatibilidade com mobile
+
+            // Copia o conteúdo
+            document.execCommand("copy");
+
+            // Alerta para o usuário (pode ser substituído por um popup)
+            alert("Texto copiado para a área de transferência!");
+        }
+    </script>
+</body>
+</html>
